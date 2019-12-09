@@ -15,17 +15,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-/*	public static final Contact DEFAULT_CONTACT = new Contact("Juan Flores", 
-			"https://github.com/ajaflorez-upc/", "ajaflorez.upc@gmail.com");
+	public static final Contact DEFAULT_CONTACT = new Contact("Yair Ccepaya", 
+			"https://github.com/yalucepadi/restauranteRest", "yalucepa@gmail.com");
 	
 	
 	@SuppressWarnings("rawtypes")
-	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo("test", "Hospitall App", 
+	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo("test", "Restaurant App", 
 			"1.0", "PREMIUN", DEFAULT_CONTACT, "Apache 2.0", "https://www.apache.org/licenses/LICENSE-2.0", 
 			new ArrayList<VendorExtension>());
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(DEFAULT_API_INFO);
 	}
-	*/
+	
 }
