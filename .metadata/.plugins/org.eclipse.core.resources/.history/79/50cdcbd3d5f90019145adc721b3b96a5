@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Nuevo Usuario</h1>
+
+		<div class="card">
+			<div class="card-header">Registro de nuevo usuario</div>
+			<div class="card-body">
+
+				<form th:action="@{/usuario/save}" th:object="${usuario}" 
+					method="post">
+					<div class="form-group">
+						<label for="username">username:</label> 
+						<input type="text" class="form-control" 
+							placeholder="Usuario"
+							th:field="*{username}">
+					</div>
+						<div class="form-group">
+						<label for="password">Password:</label> 
+						<input type="password" class="form-control" 
+							placeholder="Contraseña"
+							th:field="*{password}">
+					</div>
+							<div class="form-group">
+						<label for="apellidos">Apellidos:</label> 
+						<input type="text" class="form-control" 
+							placeholder="Ingrese sus Apellidos"
+							th:field="*{apellidos}">
+					</div>
+						<div class="form-group">
+						<label for="nombres">Nombres:</label> 
+						<input type="text" class="form-control" 
+							placeholder="Ingrese su nombre"
+							th:field="*{nombres}">
+					</div>
+					<div class="form-group">
+						<label for="cargo">Cargo:</label> 
+						<select th:field="*{cargo}" class="form-control">
+					      <option th:value="Enfermera" th:text="Enfermera"
+					              th:value="Medico Cirujano" th:text="Medico Cirujano"
+					              th:value="Tecnico" th:text="Tecnico"
+					               th:value="Nutricionista" th:text="Nutricionista"
+					      
+					      ></option>
+					    </select>
+						
+					</div>
+				
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-save"></i> Registrar
+					</button>
+					<a th:href="@{/}" class="btn btn-danger"> 
+						<i class="fas fa-undo"></i> Cancelar 
+					</a>
+				</form>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

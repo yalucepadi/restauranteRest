@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "layout/layout :: head"></head>
+<body>
+  <header th:replace = "layout/layout :: header"></header>
+
+<div class = "container">
+
+	<h1>Restaurant index</h1>
+	<div class="card text-center">
+			<div class="card-header">Lista de Platos</div>
+			<div class="card-body">
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+						<th scope="col">#</th>
+							<th scope="col">platoNombre</th>
+							<th scope="col">platoDescripcion</th>
+						    <th scope="col">stock</th>
+						    <th scope="col">menuId</th>
+							
+						    
+						</tr>
+					</thead>
+					<tbody th:each="plato: ${platos}">
+						<tr>
+							<th scope="row" th:text="${plato.platoId}">1</th>
+							<td th:text="${plato.platoNombre}">Mark</td>
+							<td th:text="${plato.platoDescripcion}">descripcion</td>
+							<td th:text="${plato.stock}">1</td>
+							<td th:text="${plato.menu.menuId}">1</td>
+							<td>
+								<br>					
+							</td>
+							<td>
+							<a th:href="@{ '/plato/info/' + ${plato.platoId} }" class="btn btn-info"> 
+									<i class="fas fa-info"></i>
+								</a>		
+								<a th:href="@{ '/plato/edit/' + ${plato.platoId} }" class="btn btn-warning"> 
+									<i class="fas fa-edit"></i> 
+								</a>
+										<a th:href="@{ '/plato/del/' + ${plato.platoId} }" class="btn btn-danger"> 
+									<i class="fas fa-trash-alt"></i> 
+								</a>						
+							</td>
+						</tr>						
+					</tbody>
+	</table>
+</div>
+<div class="card-footer text-muted">
+				<a th:href="@{/plato/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nuevo plato</a>
+			</div>
+</div>
+</div>
+<footer th:replace = "layout/layout :: footer"></footer>
+</body>
+</html>

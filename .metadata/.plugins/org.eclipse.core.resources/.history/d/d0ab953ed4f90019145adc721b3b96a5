@@ -1,0 +1,5 @@
+package pe.edu.upn.demo.service;
+
+public interface UsuarioService {
+
+}

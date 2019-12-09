@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "layout/layout :: head"></head>
+<body>
+  <header th:replace = "layout/layout :: header"></header>
+
+<div class = "container">
+
+	<h1>Restaurant index</h1>
+	<div class="card text-center">
+			<div class="card-header">Lista de Admin</div>
+			<div class="card-body">
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Dni</th>
+							<th scope="col">Apellidos</th>
+							<th scope="col">Nombre</th>
+
+							<th scope="col"></th>
+						    
+						</tr>
+					</thead>
+					<tbody th:each="admin: ${admines}">
+						<tr>
+							<th scope="row" th:text="${admin.adminCod}">1</th>
+							<td th:text="${admin.adminDni}">12345678</td>
+							<td th:text="${admin.adminApellidos}">Otto</td>			
+							<td th:text="${admin.adminNombre}">Mark</td>
+						
+							
+			
+						<td>
+													
+							</td>
+						</tr>						
+					</tbody>
+	</table>
+</div>
+<div class="card-footer text-muted">
+				<a th:href="@{/admin/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nuevo Admin</a>
+	
+</div>
+
+</div>
+</div>
+<footer th:replace = "layout/layout :: footer"></footer>
+</body>
+</html>

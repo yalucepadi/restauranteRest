@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "layout/layout :: head"></head>
+<body>
+  <header th:replace = "layout/layout :: header"></header>
+
+<div class = "container">
+
+	<h1>Restaurant index</h1>
+	<div class="card text-center">
+			<div class="card-header">Lista de usuarios</div>
+			<div class="card-body">
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+						<th scope="col">#</th>
+						   <th scope="col">pedidoId</th>
+							<th scope="col">ventaTotalTotal</th>
+						 
+							<th scope="col"></th>
+						    
+						</tr>
+					</thead>
+					<tbody th:each="ventaTotal: ${ventaTotales}">
+						<tr>
+							<th scope="row" th:text="${ventaTotal.ventaTotalCod}">1</th>	
+						    <td th:text="${ventaTotal.pedido.pedidoCod}">1</td>
+							<td th:text="${ventaTotal.ventaTotalTotal}">1</td>
+						
+							
+							<td>
+													
+							</td>
+						</tr>						
+					</tbody>
+	</table>
+</div>
+<div class="card-footer text-muted">
+				<a th:href="@{/ventaTotal/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nueva Venta total</a>
+			</div>
+</div>
+</div>
+<footer th:replace = "layout/layout :: footer"></footer>
+</body>
+</html>

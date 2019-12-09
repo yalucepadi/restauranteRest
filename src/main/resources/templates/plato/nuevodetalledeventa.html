@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Nuevo Detalle de venta</h1>
+
+		<div class="card">
+			<div class="card-header">Registro de nuevo Detalle de venta</div>
+			<div class="card-body">
+
+				<form th:action="@{/plato/savedetalledeventa}" 
+					th:object="${detalledeventa}" method="post">
+							<div class="form-group">
+						<label for="platoId">platoId:</label> 
+						<input type="text" class="form-control" 
+							placeholder="platoId"
+							th:field="*{plato.platoId}">
+					</div>
+					<div class="form-group">
+						<label for="detalleDeVentaPrecio">detalleDeVentaPrecio:</label> 
+						<input type="text" class="form-control" 
+							placeholder="detalleDeVentaPrecio"
+							th:field="*{detalleDeVentaPrecio}">
+					</div>
+			
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-save"></i> Grabar
+					</button>
+					<a th:href="@{/plato}" class="btn btn-danger"> 
+						<i class="fas fa-undo"></i> Cancelar 
+					</a>
+				</form>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

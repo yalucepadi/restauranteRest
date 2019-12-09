@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Nuevo Turno</h1>
+
+		<div class="card">
+			<div class="card-header">Registro de nuevo turno</div>
+			<div class="card-body">
+
+				<form th:action="@{/menu/saveturno}" 
+					th:object="${turno}" method="post">
+					
+					<div class="form-group">
+						<label for="turnoDescripcion">turnoDescripcion:</label> 
+						<input type="text" class="form-control" 
+							placeholder="turnoDescripcion"
+							th:field="*{turnoDescripcion}">
+					</div>
+								<div class="form-group">
+						<label for="menuId">menuId:</label> 
+						<input type="text" class="form-control" 
+							placeholder="menuId"
+							th:field="*{menu.menuId}">
+					</div>
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-save"></i> Grabar
+					</button>
+					<a th:href="@{/menu}" class="btn btn-danger"> 
+						<i class="fas fa-undo"></i> Cancelar 
+					</a>
+				</form>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

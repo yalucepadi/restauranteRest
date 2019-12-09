@@ -1,0 +1,3 @@
+[submodule "restaurante_git_lab"]
+	path = restaurante_git_lab
+	url = https://gitlab.com/yalucepa/restaurante.git

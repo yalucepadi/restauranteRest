@@ -1,0 +1,61 @@
+package pe.edu.upn.demo.service.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import pe.edu.upn.demo.model.entity.Usuario;
+import pe.edu.upn.demo.model.repository.UsuarioRepository;
+import pe.edu.upn.demo.service.UsuarioService;
+
+@Service
+public class UsuarioServiceImpl  implements UsuarioService{
+@Autowired
+private UsuarioRepository usuarioRepository;
+	
+	
+	@Override
+	public List<Usuario> findAll() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<Usuario> findById(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario save(Usuario entity) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Usuario update(Usuario entity) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById(Long id) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Optional<Usuario> findByUsername(String username) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

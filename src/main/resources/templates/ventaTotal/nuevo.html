@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container">
+
+		<h1>Nueva VentaTotal</h1>
+
+		<div class="card">
+			<div class="card-header">Registro de nueva VentaTotal</div>
+			<div class="card-body">
+
+				<form th:action="@{/ventaTotal/save}" th:object="${ventaTotal}" 
+					method="post">
+					
+						<div class="form-group">
+						<label for="pedido.pedidoCod">pedido.pedidoCod:</label> 
+						<input type="text" class="form-control" 
+							placeholder="pedido.pedidoCod"
+							th:field="*{pedido.pedidoCod}">
+					</div>
+					
+					<div class="form-group">
+						<label for="ventaTotalTotal">ventaTotalTotal:</label> 
+						<input type="text" class="form-control" 
+							placeholder="ventaTotalTotal"
+							th:field="*{ventaTotalTotal}">
+					</div>
+					
+			
+					<button type="submit" class="btn btn-primary">
+						<i class="fas fa-save"></i> Grabar
+					</button>
+					<a th:href="@{/ventaTotal}" class="btn btn-danger"> 
+						<i class="fas fa-undo"></i> Cancelar 
+					</a>
+				</form>
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

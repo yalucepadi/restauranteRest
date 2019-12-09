@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "layout/layout :: head"></head>
+<body>
+  <header th:replace = "layout/layout :: header"></header>
+
+<div class = "container">
+
+	<h1>Restaurant index</h1>
+	<div class="card text-center">
+			<div class="card-header">Lista de menu</div>
+			<div class="card-body">
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+						<th scope="col">#</th>
+							<th scope="col">AdminId</th>
+							
+							
+							<th scope="col"></th>
+						    
+						</tr>
+					</thead>
+					<tbody th:each="menu: ${menus}">
+						<tr>
+							<th scope="row" th:text="${menu.menuId}">1</th>
+							<td th:text="${menu.admin.adminCod}">Mark</td>
+							
+						
+
+							
+							<td>	
+							<a th:href="@{ '/menu/info/' + ${menu.menuId} }" class="btn btn-info"> 
+									<i class="fas fa-utensils"></i>
+								</a>		
+								<a th:href="@{ '/menu/infoturno/' + ${menu.menuId} }" class="btn btn-outline-info" > 
+									<i class="fas fa-info"></i> 
+								</a>	
+							</td>
+						</tr>						
+					</tbody>
+	</table>
+</div>
+<div class="card-footer text-muted">
+				<a th:href="@{/menu/nuevo}" class="btn btn-primary"><i class="fas fa-file-alt"></i> Nuevo Menu</a>
+			</div>
+</div>
+</div>
+<footer th:replace = "layout/layout :: footer"></footer>
+</body>
+</html>
